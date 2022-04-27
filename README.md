@@ -4,7 +4,11 @@ Este proyecto sirve como guia para ver las configuraciones necesarias y tener lo
 
 ## Archivos
 
-La estructura de los archivos es la siguiente:
+La estructura es la siguiente:
+
+- **Grafana**: Directorio que contiene las configuraciones para Grafana
+- **Prometheus**: Directorio que contiene las configuraciones para Prometheus
+- **docker-compose.yml**: Archivo que contiene las imagenes de docker usadas
 
 ### Grafana 
 
@@ -23,15 +27,17 @@ Guias y referencias que me ayudaron a entender y montar el ejemplo:
 
 - How To Run Prometheus and Grafana using Docker Compose (v3.7 Docker Compose):
   - https://techviewleo.com/run-prometheus-and-grafana-using-docker-compose/
-- Guia oficial de Grafana (v3.8 Docker Compose)
-  - Monitoring a Linux host with Prometheus, Node Exporter, and Docker Compose
+- Monitoring a Linux host with Prometheus, Node Exporter, and Docker Compose (v3.8 Docker Compose)
+  - https://grafana.com/docs/grafana-cloud/quickstart/docker-compose-linux/
+- Server Monitoring // Prometheus and Grafana Tutorial (YouTube)
+  -  https://www.youtube.com/watch?v=9TJx7QTrTyo&list=PLs242WxerbCQAnJnbGrpRLM1stU2EP7im&index=10
 
 ## Docker Hub
 
-Links oficiales de Docker Hub
+Links oficiales de imagenes Docker usadas:
 
-- Grafana: https://hub.docker.com/r/grafana/grafana-enterprise
-- Prometheus: https://hub.docker.com/r/prom/prometheus
-- Node Exporter: https://hub.docker.com/r/prom/node-exporter
+- **Grafana**: https://hub.docker.com/r/grafana/grafana-enterprise
+- **Prometheus**: https://hub.docker.com/r/prom/prometheus
+- **Node Exporter** : https://hub.docker.com/r/prom/node-exporter
 
 
