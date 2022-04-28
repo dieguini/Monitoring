@@ -30,6 +30,8 @@ docker-compose -f docker-compose.yml up -d
 
 ### <ins>2.2. Produccion</ins>
 
+(Preparando produccion...)
+
 ## 3. Archivos
 
 La estructura es la siguiente:
