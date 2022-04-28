@@ -2,28 +2,54 @@
 
 Este proyecto sirve como guia para ver las configuraciones necesarias y tener los archivos base del sitio
 
-## Archivos
+## 1. Pre requisitos
+
+Para que el proyecto funcione se necesita:
+
+- Docker Engine
+- Docker Compose (Viene por defecto en las ultimas versiones)
+## 2. Levanta el proyecto
+
+Para levantar el servicio existen los casos de prueba y produccion.
+### <ins>2.1. Prueba</ins>
+
+El caso de prueba se usa para poder ver un ejemplo sencillo con todo pre configurado, este funciona por defecto con el archivo **_docker-compose.yml_**
+
+Ejecutar
+
+```
+docker-compose up -d
+```
+o
+```
+docker-compose -f docker-compose.yml up -d
+```
+
+### <ins>2.2. Produccion</ins>
+
+## 3. Archivos
 
 La estructura es la siguiente:
 
 - **Grafana**: Directorio que contiene las configuraciones para Grafana
 - **Prometheus**: Directorio que contiene las configuraciones para Prometheus
-- **docker-compose.yml**: Archivo que contiene las imagenes de docker usadas
+- **docker-compose.yml** (Basico): Archivo que contiene las imagenes de docker usadas para el caso de ejemplo
+- **docker-compose-prod.yml** (Avanzado): Archivo que contiene las imagenes de docker, como esta pensado para produccion pedira mas datos y armara volumenes separados
 
-### Grafana 
+### <ins>3.1. Grafana</ins>
 
 Contiene las configuraciones basicas de un servidor grafana
   - datasource.yml:
-  - grafana.ini: Configuración obtenida de https://github.com/grafana/grafana/blob/main/conf/defaults.ini
+  - grafana.ini: Configuración obtenida de [aqui](https://github.com/grafana/grafana/blob/main/conf/defaults.ini)
 
-### Prometheus
+### <ins>3.2. Prometheus</ins>
 
 Configuración
   - prometheus.yml: Configuracion básica de prometheus (Se encuentran los targets a monitorear)
 
-## Guias
+## 4. Guias
 
-Guias y referencias que me ayudaron a entender y montar el ejemplo:
+Adjunto algunas guias que me ayudaron a enriquecer, entender y montar los ejemplos:
 
 - How To Run Prometheus and Grafana using Docker Compose (v3.7 Docker Compose):
   - https://techviewleo.com/run-prometheus-and-grafana-using-docker-compose/
@@ -34,9 +60,9 @@ Guias y referencias que me ayudaron a entender y montar el ejemplo:
 -  Guia avanzada de Docker Compose (Esta guia me ayudo para el uso de multiples docker-compose.yml)
    -  https://runnable.com/docker/advanced-docker-compose-configuration
 
-## Docker Hub
+## 5. Docker Hub
 
-Links oficiales de imagenes Docker usadas:
+Links oficiales de imagenes Docker usadas en el proyecto:
 
 - **Grafana**: https://hub.docker.com/r/grafana/grafana-enterprise
 - **Prometheus**: https://hub.docker.com/r/prom/prometheus
