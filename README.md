@@ -31,6 +31,8 @@ Guias y referencias que me ayudaron a entender y montar el ejemplo:
   - https://grafana.com/docs/grafana-cloud/quickstart/docker-compose-linux/
 - Server Monitoring // Prometheus and Grafana Tutorial (YouTube)
   -  https://www.youtube.com/watch?v=9TJx7QTrTyo&list=PLs242WxerbCQAnJnbGrpRLM1stU2EP7im&index=10
+-  Guia avanzada de Docker Compose (Esta guia me ayudo para el uso de multiples docker-compose.yml)
+   -  https://runnable.com/docker/advanced-docker-compose-configuration
 
 ## Docker Hub
 
