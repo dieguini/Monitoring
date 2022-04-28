@@ -4,6 +4,9 @@ networks:
   monitoring:
     driver: bridge
 
+volumes:
+  prometheus_data: {}
+
 services:
   prometheus:
     image: prom/prometheus:latest

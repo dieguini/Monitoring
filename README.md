@@ -10,7 +10,10 @@ Para que el proyecto funcione se necesita:
 - Docker Compose (Viene por defecto en las ultimas versiones)
 ## 2. Levanta el proyecto
 
-Para levantar el servicio existen los casos de prueba y produccion.
+Para levantar el servicio existen los casos de:
+
+- **Prueba:** Da un ejemplo con configuraciones basicas
+- **Produccion:** Requiere configuraciones avanzadas
 ### <ins>2.1. Prueba</ins>
 
 El caso de prueba se usa para poder ver un ejemplo sencillo con todo pre configurado, este funciona por defecto con el archivo **_docker-compose.yml_**
@@ -31,8 +34,13 @@ docker-compose -f docker-compose.yml up -d
 
 La estructura es la siguiente:
 
-- **Grafana**: Directorio que contiene las configuraciones para Grafana
-- **Prometheus**: Directorio que contiene las configuraciones para Prometheus
+- **PRUEBA** (Entorno de ejemplo - Pre configuraciones realizadas)
+  - **Grafana**: Directorio que contiene configuraciones de Grafana
+  - **Prometheus**: Directorio que contiene configuraciones de Prometheus
+- **PRODUCCION**
+  - **Grafana**: Directorio que contiene configuraciones de Grafana
+  - **Prometheus**: Directorio que contiene configuraciones de Prometheus
+
 - **docker-compose.yml** (Basico): Archivo que contiene las imagenes de docker usadas para el caso de ejemplo
 - **docker-compose-prod.yml** (Avanzado): Archivo que contiene las imagenes de docker, como esta pensado para produccion pedira mas datos y armara volumenes separados
 

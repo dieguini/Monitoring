@@ -9,7 +9,7 @@ services:
     image: prom/prometheus:latest
     container_name: prometheus_serv
     volumes:
-     - "./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml"
+     - "./PRUEBA/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml"
     ports:
      - 9090:9090
     networks:
@@ -19,8 +19,8 @@ services:
     image: grafana/grafana-enterprise:latest
     container_name: grafana_serv
     volumes:
-      - "./grafana/grafana.ini:/etc/grafana/grafana.ini"
-      - "./grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml"
+      - "./PRUEBA/grafana/grafana.ini:/etc/grafana/grafana.ini"
+      - "./PRUEBA/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml"
     ports:
       - 3200:3000
     networks:
