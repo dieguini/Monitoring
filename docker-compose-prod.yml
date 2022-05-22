@@ -5,7 +5,8 @@ networks:
     driver: bridge
 
 volumes:
-  prometheus_data: {}
+  grafana-data: {}
+  prometheus-data: {}
 
 services:
   prometheus:
@@ -13,6 +14,8 @@ services:
     container_name: prometheus_serv
     volumes:
       - "./PRODUCCION/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml"
+      # Volumen de datos - Prometheus
+      - "prometheus-data:/prometheus"
     ports:
       - 9191:9090
     networks:
@@ -26,6 +29,8 @@ services:
     volumes:
       - "./PRODUCCION/grafana/grafana.ini:/etc/grafana/grafana.ini"
       - "./PRODUCCION/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml"
+      # Volumen de datos - Grafana
+      - "grafana-data:/var/lib/grafana"
     ports:
       - 3200:3000
     networks:

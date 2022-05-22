@@ -28,9 +28,21 @@ o
 docker-compose -f docker-compose.yml up -d
 ```
 
-### <ins>2.2. Produccion</ins>
+### <ins>2.2. Producción</ins>
 
-(Preparando produccion...)
+El caso de produccion se usa para crear un entorno casi listo para produccion, este funciona por defecto con el archivo **_docker-compose-prod.yml_**
+
+#### <ins>2.2.1. Env</ins>
+
+Se debe configurar un archivo **.env** para las variables de entorno (Se brinda un ejemplo dentro de la ccarpeta de PRODUCCION > **.env.example**)
+
+#### <ins>2.2.2. Ejecución</ins>
+
+```
+docker-compose -f docker-compose-prod.yml up -d
+```
+
+(Todavia falta...)
 
 ## 3. Archivos
 
@@ -69,7 +81,10 @@ Adjunto algunas guias que me ayudaron a enriquecer, entender y montar los ejempl
   -  https://www.youtube.com/watch?v=9TJx7QTrTyo&list=PLs242WxerbCQAnJnbGrpRLM1stU2EP7im&index=10
 -  Guia avanzada de Docker Compose (Esta guia me ayudo para el uso de multiples docker-compose.yml)
    -  https://runnable.com/docker/advanced-docker-compose-configuration
-
+- Guia para uso de variables de entorno
+  -  https://towardsdatascience.com/a-complete-guide-to-using-environment-variables-and-files-with-docker-and-compose-4549c21dc6af
+-  Guia Video - Monitoreo con Docker (Grafana, Prometheus, Node-Exporter, cAdvisor)
+   -  https://www.youtube.com/watch?v=PCJwJpbln6Q
 ## 5. Docker Hub
 
 Links oficiales de imagenes Docker usadas en el proyecto:
