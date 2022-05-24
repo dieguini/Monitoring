@@ -85,6 +85,8 @@ Adjunto algunas guias que me ayudaron a enriquecer, entender y montar los ejempl
   -  https://towardsdatascience.com/a-complete-guide-to-using-environment-variables-and-files-with-docker-and-compose-4549c21dc6af
 -  Guia Video - Monitoreo con Docker (Grafana, Prometheus, Node-Exporter, cAdvisor)
    -  https://www.youtube.com/watch?v=PCJwJpbln6Q
+-  Guia Video - WMI Exporter para Windows
+   -  https://www.youtube.com/watch?v=kVCePoVbyJ0
 ## 5. Docker Hub
 
 Links oficiales de imagenes Docker usadas en el proyecto:
