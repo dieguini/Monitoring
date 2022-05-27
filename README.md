@@ -16,33 +16,48 @@ Para levantar el servicio existen los casos de:
 - **Produccion:** Requiere configuraciones avanzadas
 ### <ins>2.1. Prueba</ins>
 
-El caso de prueba se usa para poder ver un ejemplo sencillo con todo pre configurado, este funciona por defecto con el archivo **_docker-compose.yml_**
+El caso de prueba se usa para poder ver un ejemplo sencillo con todo pre configurado, este funciona por defecto con el archivo **_docker-compose.yml_**.
 
-Ejecutar
+Ingresar a la carpeta de _PRUEBAS_
+
+<ins>Ejecutar</ins>
 
 ```
 docker-compose up -d
-```
-o
-```
-docker-compose -f docker-compose.yml up -d
 ```
 
 ### <ins>2.2. Producción</ins>
 
 El caso de produccion se usa para crear un entorno casi listo para produccion, este funciona por defecto con el archivo **_docker-compose-prod.yml_**
 
-#### <ins>2.2.1. Env</ins>
+#### <ins>2.2.1. .env y .grafana-env</ins>
 
-Se debe configurar un archivo **.env** para las variables de entorno (Se brinda un ejemplo dentro de la ccarpeta de PRODUCCION > **.env.example**)
+Se debe configurar dos archivos:
+
+- **.env**: Variables de entorno, puertos (Ejemplo en _PRODUCCION_ > **.env.example**)
+- **.grafana-env**: Variables de servidor grafana (Ejemplo en _PRODUCCION_ > **.grafana-env.example**)
+
+<ins>.env</ins>
+
+- **PROM_HOST_PORT**: Puerto del host para prometheus (Nuestro equipo)
+- **PROM_CONTAINER_PORT**: Puerto contenedor para prometheus
+- **GF_HOST_PORT**: Puerto del host para grafana (Nuestro equipo)
+- **GF_CONTAINER_PORT**: Puerto contenedor para grafana
+
+<ins>.grafana-env</ins>
+
+- **GF_SECURITY_ADMIN_USER**: Usuario admin para grafana
+- **GF_SECURITY_ADMIN_PASSWORD**: Contraseña de admin
 
 #### <ins>2.2.2. Ejecución</ins>
 
-```
-docker-compose -f docker-compose-prod.yml up -d
-```
+Ingresar a la carpeta de _PRODUCCION_
 
-(Todavia falta...)
+<ins>Ejecutar</ins>
+
+```
+docker-compose up -d
+```
 
 ## 3. Archivos
 
@@ -51,12 +66,11 @@ La estructura es la siguiente:
 - **PRUEBA** (Entorno de ejemplo - Pre configuraciones realizadas)
   - **Grafana**: Directorio que contiene configuraciones de Grafana
   - **Prometheus**: Directorio que contiene configuraciones de Prometheus
+  - **docker-compose.yml** (Basico): Archivo que contiene las imagenes de docker usadas para el caso de ejemplo
 - **PRODUCCION**
   - **Grafana**: Directorio que contiene configuraciones de Grafana
   - **Prometheus**: Directorio que contiene configuraciones de Prometheus
-
-- **docker-compose.yml** (Basico): Archivo que contiene las imagenes de docker usadas para el caso de ejemplo
-- **docker-compose-prod.yml** (Avanzado): Archivo que contiene las imagenes de docker, como esta pensado para produccion pedira mas datos y armara volumenes separados
+  - **docker-compose-prod.yml** (Avanzado): Archivo que contiene las imagenes de docker, como esta pensado para produccion pedira mas datos y armara volumenes separados
 
 ### <ins>3.1. Grafana</ins>
 

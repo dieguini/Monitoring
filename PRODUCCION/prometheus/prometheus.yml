@@ -9,13 +9,12 @@ alerting:
     - targets: []
     scheme: http
     timeout: 10s
-    api_version: v1
 
 scrape_configs:
 - job_name: prometheus
   static_configs:
   - targets: ['localhost:9090']
 
-- job_name: 'Windows Area Sistemas'
-  static_configs:
-  - targets: ['172.20.50.11:9182', '172.20.50.23:9182','172.20.50.9:9182']
+#- job_name: 'tag'
+#  static_configs:
+#  - targets: ['ingresar_ip:puerto', 'ingresar_ip:puerto']
