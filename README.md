@@ -1,91 +1,98 @@
-# Grafana, Prometheus y Docker Compose
+# Monitoring
 
-Este proyecto sirve como guia para ver las configuraciones necesarias y tener los archivos base del sitio
+Project that seeks to provide a guide for the necessary configurations and base files that integrate the tools:
 
-## 1. Pre requisitos
+- [Grafana](https://grafana.com/)
+- [Prometheus](https://prometheus.io/)
+- [cAdvisor](https://github.com/google/cadvisor)
 
-Para que el proyecto funcione se necesita:
+_Read this in other languages: [English](README.md), [Spanish](README.spa.md)._
+
+## 1. Pre requisits
+
+For the project to work you need:
 
 - Docker Engine
-- Docker Compose (Viene por defecto en las ultimas versiones)
-## 2. Levanta el proyecto
+- Docker Compose (Comes by default in the latest versions)
+## 2. Usage
 
-Para levantar el servicio existen los casos de:
+There are two use cases:
 
-- **Prueba:** Da un ejemplo con configuraciones basicas
-- **Produccion:** Requiere configuraciones avanzadas
-### <ins>2.1. Prueba</ins>
+- **Test:** Give an example with basic configurations
+- **Production:** Requires advanced settings
 
-El caso de prueba se usa para poder ver un ejemplo sencillo con todo pre configurado, este funciona por defecto con el archivo **_docker-compose.yml_**.
+### 2.1. Test
 
-Ingresar a la carpeta de _PRUEBAS_
+The _test_ case is used to see a simple example with everything preconfigured, it works by default with the [docker-compose.yml](PRUEBA/docker-compose.yml) file.
 
-<ins>Ejecutar</ins>
+Enter the [TESTS](PRUEBA/) folder.
 
-```
+<ins>Execute</ins>
+
+```sh
 docker-compose up -d
 ```
 
-### <ins>2.2. Producción</ins>
+### 2.2. Production
 
-El caso de produccion se usa para crear un entorno casi listo para produccion, este funciona por defecto con el archivo **_docker-compose-prod.yml_**
+The production case is used to create an almost production-ready environment, it works by default with the [docker-compose.yml](PRODUCCION/docker-compose.yml) file.
 
-#### <ins>2.2.1. .env y .grafana-env</ins>
+#### 2.2.1. `.env` & `.grafana-env`
 
-Se debe configurar dos archivos:
+Two files must be configured:
 
-- **.env**: Variables de entorno, puertos (Ejemplo en _PRODUCCION_ > **.env.example**)
-- **.grafana-env**: Variables de servidor grafana (Ejemplo en _PRODUCCION_ > **.grafana-env.example**)
+- **.env**: Environment variables, ports (Example in _PRODUCCION_ > **.env.example**)
+- **.grafana-env**: Grafana server variables (Example in _PRODUCCION_ > **.grafana-env.example**)
 
 <ins>.env</ins>
 
-- **PROM_HOST_PORT**: Puerto del host para prometheus (Nuestro equipo)
-- **PROM_CONTAINER_PORT**: Puerto contenedor para prometheus
-- **GF_HOST_PORT**: Puerto del host para grafana (Nuestro equipo)
-- **GF_CONTAINER_PORT**: Puerto contenedor para grafana
+- **PROM_HOST_PORT**: Host port for prometheus (Our team)
+- **PROM_CONTAINER_PORT**: Container port for prometheus
+- **GF_HOST_PORT**: Host port for grafana (Our team)
+- **GF_CONTAINER_PORT**: Container port for grafana
 
 <ins>.grafana-env</ins>
 
-- **GF_SECURITY_ADMIN_USER**: Usuario admin para grafana
-- **GF_SECURITY_ADMIN_PASSWORD**: Contraseña de admin
+- **GF_SECURITY_ADMIN_USER**: Grafana admin user
+- **GF_SECURITY_ADMIN_PASSWORD**: Admin password
 
-#### <ins>2.2.2. Ejecución</ins>
+#### <ins>2.2.2. Execution</ins>
 
-Ingresar a la carpeta de _PRODUCCION_
+Enter the folder _PRODUCCION_
 
-<ins>Ejecutar</ins>
+<ins>Execute</ins>
 
 ```
 docker-compose up -d
 ```
 
-## 3. Archivos
+## 3. Files
 
-La estructura es la siguiente:
+Structure of files:
 
-- **PRUEBA** (Entorno de ejemplo - Pre configuraciones realizadas)
-  - **Grafana**: Directorio que contiene configuraciones de Grafana
-  - **Prometheus**: Directorio que contiene configuraciones de Prometheus
-  - **docker-compose.yml** (Basico): Archivo que contiene las imagenes de docker usadas para el caso de ejemplo
-- **PRODUCCION**
-  - **Grafana**: Directorio que contiene configuraciones de Grafana
-  - **Prometheus**: Directorio que contiene configuraciones de Prometheus
-  - **docker-compose-prod.yml** (Avanzado): Archivo que contiene las imagenes de docker, como esta pensado para produccion pedira mas datos y armara volumenes separados
+- **TEST** (Example environment - Pre-configurations made)
+  - **Grafana**: Directory containing Grafana configurations
+  - **Prometheus**: Directory containing Prometheus configurations
+  - **docker-compose.yml** (Basic): File containing the docker images used for the example case
+- **PRODUCTION**
+  - **Grafana**: Directory containing Grafana configurations
+  - **Prometheus**: Directory containing Prometheus configurations
+  - **docker-compose-prod.yml** (Advanced): File that contains the docker images, as it is intended for production, it will request more data and will assemble separate volumes
 
 ### <ins>3.1. Grafana</ins>
 
-Contiene las configuraciones basicas de un servidor grafana
+Contains basic configurations of grafana server
   - datasource.yml:
-  - grafana.ini: Configuración obtenida de [aqui](https://github.com/grafana/grafana/blob/main/conf/defaults.ini)
+  - grafana.ini: Configuration obtained from[here](https://github.com/grafana/grafana/blob/main/conf/defaults.ini)
 
 ### <ins>3.2. Prometheus</ins>
 
-Configuración
-  - prometheus.yml: Configuracion básica de prometheus (Se encuentran los targets a monitorear)
+Setting
+  - prometheus.yml: Basic configuration of prometheus (The targets to monitor are found)
 
-## 4. Guias
+## 4. Guides
 
-Adjunto algunas guias que me ayudaron a enriquecer, entender y montar los ejemplos:
+I attach some guides that helped me to enrich, understand and assemble the examples:
 
 - How To Run Prometheus and Grafana using Docker Compose (v3.7 Docker Compose):
   - https://techviewleo.com/run-prometheus-and-grafana-using-docker-compose/
@@ -103,7 +110,7 @@ Adjunto algunas guias que me ayudaron a enriquecer, entender y montar los ejempl
    -  https://www.youtube.com/watch?v=kVCePoVbyJ0
 ## 5. Docker Hub
 
-Links oficiales de imagenes Docker usadas en el proyecto:
+Official links of Docker images used in the project:
 
 - **Grafana**: https://hub.docker.com/r/grafana/grafana-enterprise
 - **Prometheus**: https://hub.docker.com/r/prom/prometheus
